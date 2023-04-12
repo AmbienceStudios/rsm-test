@@ -4,6 +4,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <script src="https://aframe.io/releases/1.4.1/aframe.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/mind-ar@1.2.1/dist/mindar-image-aframe.prod.js"></script>
+
+    
   </head>
   <body>
     <a-scene render="colorManagement: true; physicallyCorrectLights:true;" reflection="directionalLight:a-light#dirlight;" mindar-image="imageTargetSrc: ./targets.mind;" vr-mode-ui="enabled: false" device-orientation-permission-ui="enabled: false">
@@ -43,13 +45,49 @@
             rotation="0 0 0" 
             scale=".5 .5 .5"  
             shadow="receive: true; cast: true;"
-            event-set__click="_event: mousedown touchstart; _target: #islandModel; animation__rotate360: property: rotation; to: 0 360 0; dur: 2000; easing: linear; loop: false;">
-        </a-gltf-model>
+            rotate-on-click
+            ></a-gltf-model>
         <!-- Stork GLB -->
         <a-gltf-model src="#stork" position="0 0 0" rotation="0 0 0" scale=".01 .01 .01" shadow="receive: true; cast: true;"></a-gltf-model>
         <!-- Island GLB -->
         <a-gltf-model src="#islandNoLogo" position="0 -1 0" rotation="0 0 0" scale=".5 .5 .5" shadow="receive: true; cast: true;"></a-gltf-model>
       </a-entity>
     </a-scene>
+
+    <script>
+      AFRAME.registerComponent('rotate-on-click', {
+      schema: {
+        duration: {type: 'number', default: 2000},
+        easing: {type: 'string', default: 'linear'}
+      },
+
+      init: function () {
+        var data = this.data;
+        var el = this.el;
+        var rotation = el.getAttribute('rotation');
+        var animateRotation = AFRAME.utils.extend({}, rotation);
+
+    
+        animateRotation.y += 360;
+
+  
+        var animationProperties = {
+          property: 'rotation',
+          to: AFRAME.utils.coordinates.stringify(animateRotation),
+          dur: data.duration,
+          easing: data.easing,
+          loop: false
+        };
+
+ 
+        el.setAttribute('animation__rotate', animationProperties);
+
+  
+        el.addEventListener('click', function () {
+          el.emit('animation__rotate');
+        });
+      }
+    });
+  </script>
   </body>
 </html>
