@@ -6,7 +6,7 @@
     <script src="https://cdn.jsdelivr.net/npm/mind-ar@1.2.1/dist/mindar-image-aframe.prod.js"></script>
   </head>
   <body>
-    <a-scene debug mindar-image="imageTargetSrc: ./targets.mind;" vr-mode-ui="enabled: false" device-orientation-permission-ui="enabled: false">
+    <a-scene reflection="directionalLight:a-light#dirlight;" mindar-image="imageTargetSrc: ./targets.mind;" vr-mode-ui="enabled: false" device-orientation-permission-ui="enabled: false">
       <a-assets>
           <a-asset-item id="islandOnly" src="/jti_island_only_logo.glb"></a-asset-item>
           <a-asset-item id="stork" src="/Stork.glb"></a-asset-item>
@@ -17,7 +17,8 @@
         <!-- ambient lighting -->
         <a-entity light="type: ambient; color: #888;  intensity: .5"></a-entity>
         <!-- directional lighting -->
-        <a-entity light="type: directional; color: #fff; intensity: .5" position="1 1 0"></a-entity>
+        <!-- <a-entity light="type: directional; color: #fff; intensity: .5" position="1 1 0"></a-entity> -->
+        <a-light id="dirlight" intensity="1" light="castShadow:true;type:directional" position="1 1 1"></a-light>
         <!-- Hemisphere lighting -->
         <a-entity light="type: hemisphere; color: #33C; groundColor: #3C3; intensity: 2"></a-entity>
         <!-- Point Lights -->
