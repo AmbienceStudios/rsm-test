@@ -5,10 +5,11 @@
     <script src="https://aframe.io/releases/1.4.1/aframe.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/mind-ar@1.2.1/dist/mindar-image-aframe.prod.js"></script>
     <script src="https://cdn.jsdelivr.net/gh/c-frame/aframe-extras@tagOrCommit/dist/aframe-extras.min.js"></script>
+    <script src="https://unpkg.com/aframe-animation-component@^4.1.2/dist/aframe-animation-component.min.js"></script>
     
   </head>
   <body>
-    <a-scene render="colorManagement: true; physicallyCorrectLights:true;" reflection="directionalLight:a-light#dirlight;" mindar-image="imageTargetSrc: ./targets.mind;" vr-mode-ui="enabled: false" device-orientation-permission-ui="enabled: false">
+    <a-scene render="colorManagement: true; physicallyCorrectLights:true; antialias: true;" reflection="directionalLight:a-light#dirlight;" mindar-image="imageTargetSrc: ./targets.mind;" vr-mode-ui="enabled: false" device-orientation-permission-ui="enabled: false">
       <a-assets>
           <a-asset-item id="islandOnly" src="/jti_island_only_logo.glb"></a-asset-item>
           <a-asset-item id="stork" src="/Stork.glb"></a-asset-item>
@@ -18,16 +19,18 @@
       <a-entity mindar-image-target="targetIndex: 0">
         <a-sky color="#ECECEC"></a-sky>
         <!-- ambient lighting -->
-        <a-entity light="type: ambient; color: #FFF;  intensity: 2" position="1 -2 0"></a-entity>
+        <a-entity id="dirlight" light="type: ambient; color: #FFF;  intensity: 1" position="1 -2 0"></a-entity>
         <!-- directional lighting -->
-        <a-entity light="type: directional; color: #fff; intensity: .5" position="1 1 0"></a-entity>
+        <a-entity id="dirlight" light="color: #fdb784; intensity: 0.5; decay: -1.38; distance: 1000" position="-0.01132 1.00071 -0.01089" visible=""></a-entity>
         <a-light id="dirlight" intensity="1" light="color: #fcdd96" position="1 1 1"></a-light>
         <!-- Hemisphere lighting -->
-        <a-entity light="type: hemisphere; color: #FFf; groundColor: #fff; intensity: 2" position="0 -2 0" ></a-entity>
+        <a-entity light="type: point; color: #f07d28; groundColor: #ffdbc4; intensity: 30; distance: 1000" position="0.00021 -2.12991 0.00224" visible=""></a-entity>
+        <a-entity light="type: point; color: #ff1a1f; groundColor: #ffdbc4; intensity: 30; distance: 900" position="0.51021 -3.49991 0.31224" visible=""></a-entity>
+        <a-entity light="type: point; color: #ff1a1f; groundColor: #ffdbc4; intensity: 30; distance: 900" position="-0.45021 -3.63991 0.44224" visible=""></a-entity>
         <!-- Point Lights -->
-        <a-light type="point" color="white" position="-1 1 0" intensity="1" distance="5000" decay="5"></a-light>
-        <a-light type="directional" color="white" position="0 5 0" intensity="2" distance="5000" decay="5"></a-light>
-        <a-light type="hemisphere" color="white" position="0 -.2 0" intensity=".5" distance="5000" decay="5"></a-light>
+        <a-light id="dirlight" type="point" color="white" position="-1 1 0" intensity="1" distance="5000" decay="5"></a-light>
+        <a-light id="dirlight" type="directional" color="white" position="0 5 0" intensity="2" distance="5000" decay="5"></a-light>
+        <a-light id="dirlight" type="hemisphere" color="white" position="0 -.2 0" intensity=".5" distance="5000" decay="5"></a-light>
         <!-- <a-light type="point" point; intensity: 2; distance: 1000; decay: 5; color: #FFf; " position="0 -1 0"></a-entity> -->
         <!-- <a-light type="point" intensity: 2; distance: 1000; decay: 5; color: #FFf; " position="1 -1 0"></a-entity> -->
         <!-- <a-light light="type: point; intensity: 2; distance: 1000; decay: 5; color: #FFf; " position="-1 -1 0"></a-entity> -->
