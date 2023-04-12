@@ -22,12 +22,12 @@
         <!-- Hemisphere lighting -->
         <a-entity light="type: hemisphere; color: #33C; groundColor: #3C3; intensity: 2"></a-entity>
         <!-- Point Lights -->
-        <a-entity light="type: point; intensity: 10; distance: 1000; decay: 1; color: #ffffff" position="0 -.2 0"></a-entity>
-        <a-entity light="type: point; intensity: 10; distance: 1000; decay: 1; color: #ff0000" position="0 -1 0"></a-entity>
-        <a-entity light="type: point; intensity: 20; distance: 1000; decay: 1; color: #00ff00" position="1 -1 0"></a-entity>
-        <a-entity light="type: point; intensity: 30; distance: 1000; decay: 1; color: #0000ff" position="-1 -1 0"></a-entity>
-        <a-entity light="type: point; intensity: 20; distance: 1000; decay: 1; color: #ffffff" position="1 -3 1"></a-entity>
-        <a-entity light="type: point; intensity: 30; distance: 1000; decay: 1; color: #f6a93d" position="-1 -1 -1"></a-entity>
+        <a-entity light="type: point; intensity: 10; distance: 1000; decay: 1; color: #ffffff; castShadow: true; shadowCameraVisible: true;" position="0 -.2 0"></a-entity>
+        <a-entity light="type: point; intensity: 10; distance: 1000; decay: 1; color: #ff0000; castShadow: true; shadowCameraVisible: true;" position="0 -1 0"></a-entity>
+        <a-entity light="type: point; intensity: 20; distance: 1000; decay: 1; color: #00ff00; castShadow: true; shadowCameraVisible: true;" position="1 -1 0"></a-entity>
+        <a-entity light="type: point; intensity: 30; distance: 1000; decay: 1; color: #0000ff; castShadow: true; shadowCameraVisible: true;" position="-1 -1 0"></a-entity>
+        <a-entity light="type: point; intensity: 20; distance: 1000; decay: 1; color: #ffffff; castShadow: true; shadowCameraVisible: true;" position="1 -3 1"></a-entity>
+        <a-entity light="type: point; intensity: 30; distance: 1000; decay: 1; color: #f6a93d; castShadow: true; shadowCameraVisible: true;" position="-1 -1 -1"></a-entity>
         <!-- testing light location -->
         <a-box color="#ffffff" depth=".2" height=".2" width=".2" position="0 -.2 0"></a-box>
         <a-box color="#ff0000" depth=".2" height=".2" width=".2" position="0 -1 0"></a-box>
@@ -36,11 +36,11 @@
         <a-box color="#ffffff" depth=".2" height=".2" width=".2" position="1 -3 1"></a-box>
         <a-box color="#f6a93d" depth=".2" height=".2" width=".2" position="-1 -1 -1"></a-box>
         <!-- Logo GLB -->
-        <a-gltf-model src="#islandOnly" position="0 .4 0" rotation="0 0 0" scale=".5 .5 .5"></a-gltf-model>
+        <a-gltf-model src="#islandOnly" position="0 .4 0" rotation="0 0 0" scale=".5 .5 .5"  shadow="receive: true; cast: true;"></a-gltf-model>
         <!-- Stork GLB -->
-        <a-gltf-model src="#stork" position="0 0 0" rotation="0 0 0" scale=".01 .01 .01"></a-gltf-model>
+        <a-gltf-model src="#stork" position="0 0 0" rotation="0 0 0" scale=".01 .01 .01" shadow="receive: true; cast: true;"></a-gltf-model>
         <!-- Island GLB -->
-        <a-gltf-model src="#islandNoLogo" position="0 -1 0" rotation="0 0 0" scale=".5 .5 .5"></a-gltf-model>
+        <a-gltf-model src="#islandNoLogo" position="0 -1 0" rotation="0 0 0" scale=".5 .5 .5" shadow="receive: true; cast: true;"></a-gltf-model>
       </a-entity>
     </a-scene>
   </body>
