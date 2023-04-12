@@ -10,6 +10,7 @@
   },
   "dependencies": {
     "aframe": "^1.4.1",
+    "aframe-watcher": "^1.4.0",
     "bootstrap": "^5.3.0-alpha3",
     "mind-ar": "^1.2.1",
     "react": "^18.2.0",

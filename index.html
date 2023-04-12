@@ -4,7 +4,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <script src="https://aframe.io/releases/1.4.1/aframe.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/mind-ar@1.2.1/dist/mindar-image-aframe.prod.js"></script>
-
+    <script src="https://cdn.jsdelivr.net/gh/c-frame/aframe-extras@tagOrCommit/dist/aframe-extras.min.js"></script>
     
   </head>
   <body>
@@ -16,20 +16,23 @@
       </a-assets>
       <a-camera position="0 0 0" look-controls="enabled: false"></a-camera>
       <a-entity mindar-image-target="targetIndex: 0">
+        <a-sky color="#ECECEC"></a-sky>
         <!-- ambient lighting -->
-        <a-entity light="type: ambient; color: #FFf;  intensity: .5"></a-entity>
+        <a-entity light="type: ambient; color: #FFF;  intensity: 2" position="1 -2 0"></a-entity>
         <!-- directional lighting -->
-        <!-- <a-entity light="type: directional; color: #fff; intensity: .5" position="1 1 0"></a-entity> -->
-        <a-light id="dirlight" intensity="1" light="castShadow:true;type:directional" position="1 1 1"></a-light>
+        <a-entity light="type: directional; color: #fff; intensity: .5" position="1 1 0"></a-entity>
+        <a-light id="dirlight" intensity="1" light="color: #fcdd96" position="1 1 1"></a-light>
         <!-- Hemisphere lighting -->
-        <a-entity light="type: hemisphere; color: #FFf; groundColor: #fff; intensity: 2"></a-entity>
+        <a-entity light="type: hemisphere; color: #FFf; groundColor: #fff; intensity: 2" position="0 -2 0" ></a-entity>
         <!-- Point Lights -->
-        <a-entity light="type: point; intensity: 2; distance: 1000; decay: 1; color: #FFf; castShadow: true; shadowCameraVisible: true; shadowBias: -0.001;" position="0 -.2 0"></a-entity>
-        <a-entity light="type: point; intensity: 2; distance: 1000; decay: 1; color: #FFf; castShadow: true; shadowCameraVisible: true; shadowBias: -0.001;" position="0 -1 0"></a-entity>
-        <a-entity light="type: point; intensity: 2; distance: 1000; decay: 1; color: #FFf; castShadow: true; shadowCameraVisible: true; shadowBias: -0.001;" position="1 -1 0"></a-entity>
-        <a-entity light="type: point; intensity: 2; distance: 1000; decay: 1; color: #FFf; castShadow: true; shadowCameraVisible: true; shadowBias: -0.001;" position="-1 -1 0"></a-entity>
-        <a-entity light="type: point; intensity: 2; distance: 1000; decay: 1; color: #FFf; castShadow: true; shadowCameraVisible: true; shadowBias: -0.001;" position="1 -3 1"></a-entity>
-        <a-entity light="type: point; intensity: 2; distance: 1000; decay: 1; color: #FFf; castShadow: true; shadowCameraVisible: true; shadowBias: -0.001;" position="-1 -1 -1"></a-entity>
+        <a-light type="point" color="white" position="-1 1 0" intensity="1" distance="5000" decay="5"></a-light>
+        <a-light type="directional" color="white" position="0 5 0" intensity="2" distance="5000" decay="5"></a-light>
+        <a-light type="hemisphere" color="white" position="0 -.2 0" intensity=".5" distance="5000" decay="5"></a-light>
+        <!-- <a-light type="point" point; intensity: 2; distance: 1000; decay: 5; color: #FFf; " position="0 -1 0"></a-entity> -->
+        <!-- <a-light type="point" intensity: 2; distance: 1000; decay: 5; color: #FFf; " position="1 -1 0"></a-entity> -->
+        <!-- <a-light light="type: point; intensity: 2; distance: 1000; decay: 5; color: #FFf; " position="-1 -1 0"></a-entity> -->
+        <!-- <a-light light="type: point; intensity: 2; distance: 1000; decay: 5; color: #FFf; " position="1 -3 1"></a-entity> -->
+        <!-- <a-light light="type: point; intensity: 2; distance: 1000; decay: 5; color: #FFf; " position="-1 -1 -1"></a-entity> -->
         <!-- testing light location -->
         <!-- <a-box color="#ffffff" depth=".2" height=".2" width=".2" position="0 -.2 0"></a-box> -->
         <!-- <a-box color="#ff0000" depth=".2" height=".2" width=".2" position="0 -1 0"></a-box> -->
@@ -44,13 +47,12 @@
             position="0 .4 0" 
             rotation="0 0 0" 
             scale=".5 .5 .5"  
-            shadow="receive: true; cast: true;"
             rotate-on-click
             ></a-gltf-model>
         <!-- Stork GLB -->
-        <a-gltf-model src="#stork" position="0 0 0" rotation="0 0 0" scale=".01 .01 .01" shadow="receive: true; cast: true;"></a-gltf-model>
+        <a-gltf-model src="#stork" position="0 0 0" rotation="0 0 0" scale=".01 .01 .01" animation-mixer></a-gltf-model>
         <!-- Island GLB -->
-        <a-gltf-model src="#islandNoLogo" position="0 -1 0" rotation="0 0 0" scale=".5 .5 .5" shadow="receive: true; cast: true;"></a-gltf-model>
+        <a-gltf-model src="#islandNoLogo" position="0 -1 0" rotation="0 0 0" scale=".5 .5 .5" animation-mixer></a-gltf-model>
       </a-entity>
     </a-scene>
 
