@@ -6,3 +6,6 @@ $prefix: "mo-";
 
 @import "../node_modules/bootstrap/scss/bootstrap";
 
+.AppContainer {
+    background-image: linear-gradient(to right top, #e4eeff, #ebebfb, #efeaf6, #f1e8f0, #f1e8ec);
+}
