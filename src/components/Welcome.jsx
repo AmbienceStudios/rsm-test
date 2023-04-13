@@ -36,8 +36,22 @@ const Welcome = () => {
                         </p>
                         <div class="collapse" id="collapseExample2">
                             <div class="card card-body">
-                                <p>Starting the process for Scene 2.. Check out the process below</p>
+                                <p>Create a 3D model in blender for the Cigarette and added Shape Key animations. Removed the stork and replaced it with the 3D model</p>
                                 <a href='/scene2.html' className='btn btn-success' target='_blank'>Demo Scene 2</a>
+                            </div>
+                        </div>
+                    </div>
+                       {/* Collapse Button 3 */}
+                       <div className='feature-wrapper'>
+                        <p>
+                            <a class="btn btn-primary" data-bs-toggle="collapse" href="#collapseExample3" role="button" aria-expanded="false" aria-controls="collapseExample3" data-bs-parent="collapseExample3">
+                            Task 3
+                            </a>
+                        </p>
+                        <div class="collapse" id="collapseExample3">
+                            <div class="card card-body">
+                                <p>Creating an onclick event with a 2D image that will face the camera at all times. On Click, it will open the cigarette up reviling the inside. </p>
+                                <a href='/scene3.html' className='btn btn-success' target='_blank'>Demo Scene 3</a>
                             </div>
                         </div>
                     </div>

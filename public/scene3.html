@@ -3,7 +3,7 @@
   <head>
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <!-- AFRAME VERSION -->
-    <script src="https://aframe.io/releases/1.4.0/aframe.min.js"></script>
+    <script src="https://aframe.io/releases/1.2.0/aframe.min.js"></script>
     <!-- MINDAR IMAGE TRACKER -->
     <script src="https://cdn.jsdelivr.net/npm/mind-ar@1.2.1/dist/mindar-image-aframe.prod.js"></script>
     <!-- PLUGINS -->
@@ -105,13 +105,13 @@
           ></a-entity>
         </a-entity>
         <!-- STORK -->
-        <a-gltf-model
-          src="#smoke"
-          position="0 -.5 0"
-          rotation="0 -100 0"
-          scale="5 5 5"
-          animation-mixer="clip: KeyAction.003; dur: 2000"
-        ></a-gltf-model>
+      <a-entity>
+  
+          <a-image src="./imgs/excla_icon.png" width="0.1" height="0.1" position="0 0 0.01" rotation="0 0 0" onclick="startAnimation()"></a-image>
+          <a-entity id="model" gltf-model="#smoke" scale="5 5 5" position="0 -.5 -.2" rotation="0 -110 0" animation-mixer="clip: KeyAction.003; enabled: false;  paused: true; loop: false;"></a-entity>
+          </a-entity>
+
+      </a-entity>
         <!-- ISLAND -->
         <a-gltf-model
           src="#islandNoLogo"
@@ -121,6 +121,13 @@
         ></a-gltf-model>
       </a-entity>
     </a-scene>
-
+    <script>
+      function startAnimation() {
+        var model = document.querySelector('#model');
+        model.setAttribute('animation-mixer', 'enabled', true);
+        model.setAttribute('animation-mixer', 'clip', 'KeyAction.003');
+        model.setAttribute('animation-mixer', 'paused', false);
+      }
+    </script>
   </body>
 </html>
