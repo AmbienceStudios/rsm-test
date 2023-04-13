@@ -37,7 +37,7 @@ const Welcome = () => {
                         <div class="collapse" id="collapseExample2">
                             <div class="card card-body">
                                 <p>Starting the process for Scene 2.. Check out the process below</p>
-                                <a href='/scene1.html' className='btn btn-success' target='_blank'>Demo Scene 2</a>
+                                <a href='/scene2.html' className='btn btn-success' target='_blank'>Demo Scene 2</a>
                             </div>
                         </div>
                     </div>
