@@ -14,19 +14,19 @@
     <a-scene
           render="colorManagement: true; physicallyCorrectLights:true; antialias: true;"
           reflection="directionalLight:a-light#dirlight;"
-          mindar-image="imageTargetSrc: ./targets.mind;"
+          mindar-image="imageTargetSrc: ./mindAR/targets.mind;"
           vr-mode-ui="enabled: false"
           device-orientation-permission-ui="enabled: false">
       <!-- ASSETS -->
       <a-assets>
         <a-asset-item
           id="islandOnly"
-          src="/jti_island_only_logo.glb"
+          src="./models/jti_island_only_logo.glb"
         ></a-asset-item>
-        <a-asset-item id="stork" src="/Stork.glb"></a-asset-item>
+        <a-asset-item id="stork" src="./models/Stork.glb"></a-asset-item>
         <a-asset-item
           id="islandNoLogo"
-          src="/jti_island_nologo_nosphere.glb"
+          src="./models/jti_island_nologo_nosphere.glb"
         ></a-asset-item>
       </a-assets>
       <!-- CAMERA -->
