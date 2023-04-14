@@ -23,7 +23,7 @@ const Welcome = () => {
                         <div className="collapse" id="collapseExample">
                             <div class="card card-body">
                                 <p>This example uses Mind-AR-js. It shows the click funtionality (click on JTI logo) and animation of a flying stork. To run the test open the link in a different window and point your camera (desktop webcam or mobile camera) to the LD bold Image on the right side of this page. Once the image is detected it will load the JTI scene/object</p>
-                                <a href='/scene1.html' className='btn btn-success' target='_blank'>Demo Scene 1</a>
+                                <a href='/test1.html' className='btn btn-success' target='_blank'>Visit MindAR Scene 1</a>
                             </div>            
                         </div>
                     </div>
@@ -37,7 +37,7 @@ const Welcome = () => {
                         <div class="collapse" id="collapseExample2">
                             <div class="card card-body">
                                 <p>Create a 3D model in blender for the Cigarette and added Shape Key animations. Removed the stork and replaced it with the 3D model</p>
-                                <a href='/scene2.html' className='btn btn-success' target='_blank'>Demo Scene 2</a>
+                                <a href='/scene2.html' className='btn btn-success' target='_blank'>Visit AFRAME Scene 2</a>
                             </div>
                         </div>
                     </div>
@@ -51,7 +51,7 @@ const Welcome = () => {
                         <div class="collapse" id="collapseExample3">
                             <div class="card card-body">
                                 <p>Creating an onclick event with a 2D image that will face the camera at all times. On Click, it will open the cigarette up reviling the inside. </p>
-                                <a href='/scene3.html' className='btn btn-success' target='_blank'>Demo Scene 3</a>
+                                <a href='/test3.html' className='btn btn-success' target='_blank'>Visit MindAR Scene 3</a>
                             </div>
                         </div>
                     </div>
