@@ -37,7 +37,7 @@ const Welcome = () => {
                         <div class="collapse" id="collapseExample2">
                             <div class="card card-body">
                                 <p>Create a 3D model in blender for the Cigarette and added Shape Key animations. Removed the stork and replaced it with the 3D model</p>
-                                <a href='/scene2.html' className='btn btn-success' target='_blank'>Visit AFRAME Scene 2</a>
+                                <a href='/test2.html' className='btn btn-success' target='_blank'>Visit AFRAME Scene 2</a>
                             </div>
                         </div>
                     </div>
